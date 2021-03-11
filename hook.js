@@ -26,8 +26,8 @@ class AppUgly extends React.Component {
       <div className="App">
         <h1>Hello {item}</h1>
         <h2>Start editing to see some magic happen!</h2>
-        <button onClick={incrementItem}>increment</button>
-        <button onClick={decrementItem}>decrement</button>
+        <button onClick={this.incrementItem}>increment</button>
+        <button onClick={this.decrementItem}>decrement</button>
       </div>
     );
   }
@@ -43,11 +43,10 @@ class AppUgly extends React.Component {
   decrementItem = () => {
     this.setState((state) => {
       return {
-        item: state.item + 1,
+        item: state.item - 10,
       };
     });
   };
 }
-
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<AppUgly />, rootElement);
